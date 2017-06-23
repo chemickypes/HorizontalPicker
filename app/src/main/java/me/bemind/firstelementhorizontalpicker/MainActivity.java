@@ -14,6 +14,7 @@ import me.bemind.firstelementhorizontalpicker.horizontalpicker.HorizontalPicker;
 public class MainActivity extends AppCompatActivity {
 
     private HorizontalPicker rv;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         rv = (HorizontalPicker) findViewById(R.id.rv);
 
+        textView = (TextView) findViewById(R.id.text);
+
         rv.setOnScrollStopListener(new HorizontalPicker.onScrollStopListener() {
             @Override
             public void selectedView(View view) {
                 if(view instanceof TextView) {
-                    Toast.makeText(getApplicationContext(), ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
+                    textView.setText(((TextView) view).getText().toString());
                 }else {
-                    Toast.makeText(getApplicationContext(), view.getClass().toString(), Toast.LENGTH_SHORT).show();
+                    textView.setText(view.getClass().toString());
                 }
             }
         });
