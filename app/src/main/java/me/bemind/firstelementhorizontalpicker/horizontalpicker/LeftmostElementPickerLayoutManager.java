@@ -4,11 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-
-import java.util.Objects;
 
 /**
  * Created by angelomoroni on 22/06/17.
@@ -20,7 +16,6 @@ public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
 
     private HorizontalPicker.onScrollStopListener onScrollStopListener = null;
 
-    //private RecyclerViewPositionHelper recyclerViewPositionHelper;
     private View f;
     private RecyclerView rv;
 
