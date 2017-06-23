@@ -13,7 +13,6 @@ import net.idik.lib.slimadapter.SlimAdapterEx;
 import net.idik.lib.slimadapter.SlimInjector;
 import net.idik.lib.slimadapter.viewinjector.IViewInjector;
 
-import java.util.EmptyStackException;
 import java.util.List;
 
 import me.bemind.firstelementhorizontalpicker.R;
@@ -24,7 +23,7 @@ import me.bemind.firstelementhorizontalpicker.R;
 
 public class HorizontalPicker extends RecyclerView {
     private SlimAdapterEx slimAdapter;
-    private FirstElementPickerLayoutManager pickerLayoutManager;
+    private LeftmostElementPickerLayoutManager pickerLayoutManager;
 
     public HorizontalPicker(Context context) {
         super(context);
@@ -62,7 +61,7 @@ public class HorizontalPicker extends RecyclerView {
         StartSnapHelper startSnapHelper = new StartSnapHelper();
         startSnapHelper.attachToRecyclerView(this);
 
-        pickerLayoutManager = new FirstElementPickerLayoutManager(context, LinearLayoutManager.HORIZONTAL, this, false);
+        pickerLayoutManager = new LeftmostElementPickerLayoutManager(context, LinearLayoutManager.HORIZONTAL, this, false);
 
         setLayoutManager(pickerLayoutManager);
 

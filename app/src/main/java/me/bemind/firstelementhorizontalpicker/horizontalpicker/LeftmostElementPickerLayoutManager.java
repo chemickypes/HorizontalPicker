@@ -14,7 +14,7 @@ import java.util.Objects;
  * Created by angelomoroni on 22/06/17.
  */
 
-public class FirstElementPickerLayoutManager extends LinearLayoutManager {
+public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
 
 
 
@@ -25,7 +25,7 @@ public class FirstElementPickerLayoutManager extends LinearLayoutManager {
     private RecyclerView rv;
 
 
-    public FirstElementPickerLayoutManager(Context context, int orientation, RecyclerView rv, boolean reverseLayout) {
+    public LeftmostElementPickerLayoutManager(Context context, int orientation, RecyclerView rv, boolean reverseLayout) {
         super(context, orientation, reverseLayout);
         this.rv = rv;
     }
