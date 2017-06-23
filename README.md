@@ -1,7 +1,7 @@
 # HorizontalPicker
 Simple horizontal picker with leftmost element selected
 
-
+![alt text](https://github.com/chemickypes/HorizontalPicker/blob/master/example.gif "example gif")
 
 # Credits
 * [MEiDIK - SlimAdapter](https://github.com/MEiDIK/SlimAdapter?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=5617) for the adapter (this library is very nice ;) )
