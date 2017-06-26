@@ -31,19 +31,13 @@ public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
         if (orientation == HORIZONTAL) {
 
             int scrolled = super.scrollHorizontallyBy(dx, recycler, state);
-            View newf = findFirstVisibleItem();
-            if(!newf.equals(f) ) {
-                f = newf;
-
-                for (int i = 0; i < getChildCount(); i++) {
-                    View v = getChildAt(i);
-                    v.setAlpha(v.equals(f)?1f:0.5f);
-                }
-            }
+            updateSelection();
             return scrolled;
 
         } else return 0;
     }
+
+
 
     @Override
     public void onScrollStateChanged(int state) {
@@ -54,6 +48,31 @@ public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
             }
         }
     }
+
+    public void firstSelection() {
+        try {
+            updateSelection();
+
+            if (onScrollStopListener != null) {
+                onScrollStopListener.selectedView(f);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void updateSelection() {
+        View newf = findFirstVisibleItem();
+        if(!newf.equals(f) ) {
+            f = newf;
+
+            for (int i = 0; i < getChildCount(); i++) {
+                View v = getChildAt(i);
+                v.setAlpha(v.equals(f)?1f:0.5f);
+            }
+        }
+    }
+
 
     public void setOnScrollStopListener(HorizontalPicker.onScrollStopListener onScrollStopListener) {
         this.onScrollStopListener = onScrollStopListener;
@@ -112,6 +131,7 @@ public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
         }
         return partiallyVisible;
     }
+
 
 
 }

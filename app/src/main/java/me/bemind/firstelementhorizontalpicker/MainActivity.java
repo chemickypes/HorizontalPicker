@@ -37,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         rv.addData(getListString());
+
+
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
     }
 
     public List<String> getListString() {

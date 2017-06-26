@@ -84,6 +84,12 @@ public class HorizontalPicker extends RecyclerView {
         }
     }
 
+    public void firstSelection(){
+        pickerLayoutManager.firstSelection();
+
+
+    }
+
 
     public interface onScrollStopListener{
 
