@@ -52,6 +52,8 @@ public class HorizontalPicker extends RecyclerView {
                     getViewTreeObserver().removeGlobalOnLayoutListener(this);
                     int w = getWidth();
                     addItemDecoration(new EndOffsetDecoration(w - 50));
+
+                    firstSelection();
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -72,6 +74,7 @@ public class HorizontalPicker extends RecyclerView {
                         injector.text(R.id.picker_item,data);
                     }
                 }).attachTo(this);
+
     }
 
     public void addData(List<?> data){
