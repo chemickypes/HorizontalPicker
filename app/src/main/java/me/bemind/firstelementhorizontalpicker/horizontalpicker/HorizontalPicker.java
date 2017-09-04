@@ -53,7 +53,7 @@ public class HorizontalPicker extends RecyclerView {
                     int w = getWidth();
                     addItemDecoration(new EndOffsetDecoration(w - 50));
 
-                    firstSelection();
+                    //firstSelection();
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -88,6 +88,18 @@ public class HorizontalPicker extends RecyclerView {
         });
     }
 
+    public void addData(List<?> data, final int selectedItem){
+        slimAdapter.updateData(data);
+
+        post(new Runnable() {
+            @Override
+            public void run() {
+                selectItem(selectedItem);
+                //firstSelection();
+            }
+        });
+    }
+
     public void setOnScrollStopListener(onScrollStopListener listener){
         if(pickerLayoutManager!=null){
             pickerLayoutManager.setOnScrollStopListener(listener);
@@ -98,6 +110,17 @@ public class HorizontalPicker extends RecyclerView {
         pickerLayoutManager.firstSelection();
 
 
+    }
+
+    public void selectItem(int position) {
+
+        try {
+            if (position < slimAdapter.getItemCount()) {
+                pickerLayoutManager.select(position);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 

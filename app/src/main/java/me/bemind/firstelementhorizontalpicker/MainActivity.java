@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rv.addData(getListString());
+        //rv.addData(getListString());
+        rv.addData(getListString(),5);
+
+        //rv.selectItem(5);
 
 
 

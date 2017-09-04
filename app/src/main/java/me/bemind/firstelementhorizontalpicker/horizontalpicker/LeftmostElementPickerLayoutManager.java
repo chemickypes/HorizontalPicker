@@ -133,5 +133,8 @@ public class LeftmostElementPickerLayoutManager extends LinearLayoutManager {
     }
 
 
-
+    public void select(int position) {
+        scrollToPositionWithOffset(position,10);
+        rv.smoothScrollBy(1,0);
+    }
 }
