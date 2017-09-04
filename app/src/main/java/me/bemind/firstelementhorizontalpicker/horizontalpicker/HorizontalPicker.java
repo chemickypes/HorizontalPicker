@@ -79,6 +79,13 @@ public class HorizontalPicker extends RecyclerView {
 
     public void addData(List<?> data){
         slimAdapter.updateData(data);
+
+        post(new Runnable() {
+            @Override
+            public void run() {
+                firstSelection();
+            }
+        });
     }
 
     public void setOnScrollStopListener(onScrollStopListener listener){
